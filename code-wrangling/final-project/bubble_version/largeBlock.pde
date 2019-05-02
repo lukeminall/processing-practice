@@ -3,16 +3,15 @@ class largeBlock {
   float x, y; 
   int position;
   PImage img;
+  Table profiles;
 
   // add colours to array
   // colours taken from: https://material.io/design/color/the-color-system.html#tools-for-picking-colors
   color [] colours = new color[]{#FF1744, #F50057, #D500F9, #00B0FF, #C6FF00, #FFEA00, #FF9100, #FF3D00, #00E5FF}; 
 
-  // pull in the data
-  Table profiles = loadTable("new-norsc-data.csv", "header");
-
   // block position and size
-  largeBlock(float tempX, float tempY, int tempPosition) {
+  largeBlock(Table tempData, float tempX, float tempY, int tempPosition) {
+    profiles = tempData;
     x = tempX;
     y = tempY;
     position = tempPosition;
@@ -26,6 +25,7 @@ class largeBlock {
   }
 
   void populate() {
+    
     // get data
     TableRow row = profiles.getRow(position);
     String imgSrc = row.getString("photo");

@@ -6,6 +6,7 @@ News n;
 // init global variables
 float x, y;
 int p;
+Table data;
 PFont headerFont;
 PFont bodyFont;
 PImage logo;
@@ -24,6 +25,9 @@ void setup() {
   g = new Guides();
   t = new Time();
   n = new News();
+  
+  // pull in data
+  data = loadTable("new-norsc-data.csv", "header");
 
   // design assets
   headerFont = loadFont("Environ.vlw");
@@ -42,7 +46,7 @@ void setup() {
 
   // position large blocks
   for (int i = 0; i < lb.length; i++) {
-    lb[i] = new largeBlock(x, y, p);
+    lb[i] = new largeBlock(data, x, y, p);
     // incriment position
     p++;
     x += 236;
@@ -77,8 +81,5 @@ void draw() {
   for (int i = 0; i < lb.length; i++) {
     lb[i].display();
     lb[i].populate();
-    
-    int m = millis();
-    println(m);
   }
 }
