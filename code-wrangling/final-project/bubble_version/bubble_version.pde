@@ -16,6 +16,7 @@ Bubble[] bubbles = new Bubble[50];
 
 // init block arrays
 largeBlock[] lb = new largeBlock[3];
+smallBlock[] sb = new smallBlock[6];
 
 void setup() {
   // setup window
