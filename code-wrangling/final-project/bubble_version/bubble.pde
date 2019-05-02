@@ -1,3 +1,6 @@
+/* Code written while working through this Coding Train course on object orientated programming: 
+https://www.youtube.com/watch?v=YcbcfkLzgvs&list=PLRqwX-V7Uu6bb7z2IJaTlzwzIg_5yvL4i */
+
 class Bubble {
   // init variables
   float x, y, d;

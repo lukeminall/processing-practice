@@ -1,12 +1,20 @@
-// init global varriables 
+// init global objects
 Guides g;
 Time t;
+News n;
+
+// init global variables
+float x, y;
+int p;
 PFont headerFont;
 PFont bodyFont;
 PImage logo;
 
 // set up array of bubbles
 Bubble[] bubbles = new Bubble[50];
+
+// init block arrays
+largeBlock[] lb = new largeBlock[3];
 
 void setup() {
   // setup window
@@ -15,6 +23,7 @@ void setup() {
   // add objects to varriables 
   g = new Guides();
   t = new Time();
+  n = new News();
 
   // design assets
   headerFont = loadFont("Environ.vlw");
@@ -24,6 +33,20 @@ void setup() {
   // set up the bubbles
   for (int i = 0; i < bubbles.length; i++) {
     bubbles[i] = new Bubble(random(0, width), random(100, height), random(0, 64));
+  }
+
+  // set initial block values
+  x = 16;
+  y = 160;
+  p = 0;
+
+  // position large blocks
+  for (int i = 0; i < lb.length; i++) {
+    lb[i] = new largeBlock(x, y, p);
+    // incriment position
+    p++;
+    x += 236;
+    y += 186.67;
   }
 }
 
@@ -46,8 +69,16 @@ void draw() {
 
   // clock
   t.createClock();
-}
 
-void mousePressed() {
-  // make the bubble disapear on click
+  // news section
+  n.drawLayout();
+
+  //large blocks
+  for (int i = 0; i < lb.length; i++) {
+    lb[i].display();
+    lb[i].populate();
+    
+    int m = millis();
+    println(m);
+  }
 }
