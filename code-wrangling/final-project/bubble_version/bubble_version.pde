@@ -33,7 +33,7 @@ void draw() {
   }
   
   // temporary design guides
-  g.displayGuides();
+  //g.displayGuides();
   
   // logo
   image(logo, 16, 16, 367, 112);
