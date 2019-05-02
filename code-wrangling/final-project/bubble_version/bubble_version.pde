@@ -53,6 +53,36 @@ void setup() {
     x += 236;
     y += 186.67;
   }
+  
+  // position small blocks, first row
+  x = 488;
+  y = 160;
+  for (int i = 0; i < 2; i++) {
+    sb[i] = new smallBlock(data,x, y, p);
+    // incriment position
+    p++;
+    x += 236;
+  }
+  
+  // position small blocks, second row
+  x = 16;
+  y = 346.67;
+  for (int i = 2; i < 4; i++) {
+    sb[i] = new smallBlock(data,x, y, p);
+    // incriment position
+    p++;
+    x += 708;
+  }
+  
+  // position small blocks, third row
+  x = 16;
+  y = 533.33;
+  for (int i = 4; i < 6; i++) {
+    sb[i] = new smallBlock(data,x, y, p);
+    // incriment position
+    p++;
+    x += 236;
+  }
 }
 
 void draw() {
@@ -83,4 +113,22 @@ void draw() {
     lb[i].display();
     lb[i].populate();
   }
+  
+  //small blocks, first row
+  for(int i = 0; i < 2; i++){
+    sb[i].display();
+    sb[i].populate();
+  }
+  
+  //small blocks, second row
+  for(int i = 2; i < 4; i++){
+    sb[i].display();
+    sb[i].populate();
+  }
+  
+  //small blocks, third row
+  for(int i = 4; i < 6; i++){
+    sb[i].display();
+    sb[i].populate();
+  }  
 }
