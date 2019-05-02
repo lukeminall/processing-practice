@@ -1,5 +1,8 @@
 // init global varriables 
 Guides g;
+Time t;
+PFont headerFont;
+PFont bodyFont;
 PImage logo;
 
 // set up array of bubbles
@@ -11,8 +14,11 @@ void setup() {
 
   // add objects to varriables 
   g = new Guides();
-  
+  t = new Time();
+
   // design assets
+  headerFont = loadFont("Environ.vlw");
+  bodyFont = loadFont("Helvetica-24.vlw");
   logo = loadImage("logo.png");
 
   // set up the bubbles
@@ -31,13 +37,15 @@ void draw() {
     bubbles[i].display();
     bubbles[i].top();
   }
-  
+
   // temporary design guides
-  //g.displayGuides();
-  
+  g.displayGuides();
+
   // logo
   image(logo, 16, 16, 367, 112);
-  
+
+  // clock
+  t.createClock();
 }
 
 void mousePressed() {
