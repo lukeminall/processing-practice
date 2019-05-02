@@ -4,6 +4,8 @@ class smallBlock {
   int position;
   PImage img;  
   Table profiles;
+  TableRow row;
+  String imgSrc, first, last, title;
 
   // add colours to array
   // colours taken from: https://material.io/design/color/the-color-system.html#tools-for-picking-colors
@@ -15,6 +17,16 @@ class smallBlock {
     x = tempX;
     y = tempY;
     position = tempPosition;
+    
+    // get data
+    row = profiles.getRow(position);
+    imgSrc = row.getString("photo");
+    first = row.getString("first");
+    last = row.getString("last");
+    title = row.getString("title");
+    
+    // load image
+    img = loadImage(imgSrc);
   }
 
   // block set up
@@ -25,27 +37,17 @@ class smallBlock {
   }
 
   void populate() {
-    // get data
-    TableRow row = profiles.getRow(position);
-    String imgSrc = row.getString("photo");
-    String first = row.getString("first");
-    String last = row.getString("last");
-    String title = row.getString("title");
     
-    // generate name
-    String name = title + " " + first + " " + last;
-
     // generate image
     if (imgSrc.equals("null") == true) {
       String titleAndFirst = title + " " + first;
       fill(#ffffff);
       textSize(38);
-      textAlign(CENTER,BOTTOM);
-      text(titleAndFirst,x+110,y+81.335);
-      textAlign(CENTER,TOP);
-      text(last,x+110,y+85.335);
+      textAlign(CENTER, BOTTOM);
+      text(titleAndFirst, x+110, y+81.335);
+      textAlign(CENTER, TOP);
+      text(last, x+110, y+85.335);
     } else {
-      img = loadImage(imgSrc);
       image(img, x+4, y+4, 212, 162.67);
     }
   }
