@@ -160,6 +160,10 @@ void draw() {
   } 
   
   // more news block
-  rect();
-  text("For More News Visit: http://newsroom.northumbria.ac.uk/",0,0);
+  fill(255, 255, 255, 75);
+  strokeWeight(0);
+  rect(976,649,272,55);
+  textAlign(CENTER,CENTER);
+  fill(#ffffff);
+  text("For More News Visit: http://newsroom.northumbria.ac.uk/",976,649,272,55);
 }

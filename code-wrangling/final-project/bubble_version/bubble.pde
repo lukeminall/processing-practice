@@ -14,6 +14,7 @@ class Bubble {
 
   // bubble set up
   void display() {
+    strokeWeight(1);
     stroke(#c4c4c4);
     fill(#42A5F5);
     ellipse(x, y, d, d);
