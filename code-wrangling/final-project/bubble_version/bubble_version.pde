@@ -158,4 +158,8 @@ void draw() {
   for (int i = 0; i < n.length; i++) {
      n[i].printNews(); 
   } 
+  
+  // more news block
+  rect();
+  text("For More News Visit: http://newsroom.northumbria.ac.uk/",0,0);
 }
