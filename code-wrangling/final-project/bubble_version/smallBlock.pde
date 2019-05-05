@@ -9,7 +9,7 @@ class smallBlock {
 
   // add colours to array
   // colours taken from: https://material.io/design/color/the-color-system.html#tools-for-picking-colors
-  color [] colours = new color[]{#FF1744, #F50057, #D500F9, #00B0FF, #C6FF00, #FFEA00, #FF9100, #FF3D00, #00E5FF}; 
+  color [] colours = new color[]{#FF1744, #F50057, #D500F9, #7C4DFF, #C6FF00, #FFEA00, #FF9100, #FF3D00, #69F0AE}; 
 
   // block position and size
   smallBlock(Table tempData, float tempX, float tempY, int tempPosition) {

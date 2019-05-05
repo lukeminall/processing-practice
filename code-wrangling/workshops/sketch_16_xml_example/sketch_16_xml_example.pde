@@ -1,6 +1,4 @@
-String URL = "http://newsroom.northumbria.ac.uk/rss/current_news/70031";
 
-XML xml = loadXML(URL);
 
 XML theChannel = xml.getChild("channel");
 

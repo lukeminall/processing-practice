@@ -13,7 +13,7 @@ class Guides {
     // logo
     rect(16, 16, 928, 112);
 
-    // twitter 
+    // social media
     rect(976, 160, 288, 544);
 
     //profiles
