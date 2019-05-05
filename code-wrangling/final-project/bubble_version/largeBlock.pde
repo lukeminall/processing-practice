@@ -54,6 +54,8 @@ class largeBlock {
     // generate image
     if (imgSrc.equals("null") == true) {
       String titleAndFirst = title + " " + first;
+      
+      textFont(headerFont);
       fill(#ffffff);
       textSize(38);
       textAlign(CENTER, BOTTOM);

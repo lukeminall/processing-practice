@@ -15,7 +15,7 @@ PImage logo;
 Bubble[] bubbles = new Bubble[50];
 
 // set up news array
-News[] n = new News[5];
+News[] n = new News[4];
 
 //set up block arrays
 largeBlock[] lb = new largeBlock[3];
@@ -40,9 +40,13 @@ void setup() {
   bodyFont = loadFont("Helvetica-24.vlw");
   logo = loadImage("logo.png");
 
+  // set initial new y value
+  y = 220;
+  
   // set up news objects
   for (int i = 0; i < n.length; i++) {
-     n[i] = new News(URL);   
+     n[i] = new News(URL,i,y); 
+     y += 110;
   }
   
   // set up the bubbles
@@ -107,7 +111,7 @@ void draw() {
   }
 
   // temporary design guides
-  g.displayGuides();
+  //g.displayGuides();
 
   // logo
   image(logo, 16, 16, 367, 112);

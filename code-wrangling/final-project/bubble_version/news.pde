@@ -2,15 +2,16 @@ class News {
   // set up varriables
   String URL;
   XML xml, theChannel, title, d; 
+  int itemNum;
   
   //positioning
-  int y = 220; 
+  float y = 220; 
   
   // set up individual items array
   XML[] children;
 
   // set up object
-  News(String tempURL) {
+  News(String tempURL, int tempItemNum, float tempY) {
     // pull in news feed
     URL = tempURL;
     xml = loadXML(URL);  
@@ -18,31 +19,34 @@ class News {
 
     // split into array items 
     children = theChannel.getChildren("item");
+    
+    // array item number
+    itemNum = tempItemNum;
+    
+    // y position 
+    y = tempY;
   }
 
   void printNews() {
     // pull in text
-    title = children[0].getChild("title");
-    d = children[0].getChild("description");
+    title = children[itemNum].getChild("title");
+    d = children[itemNum].getChild("description");
 
     // draw title
-    textAlign(LEFT, TOP);
+    textAlign(LEFT, CENTER);
     textFont(headerFont, 16);
     fill(#ffffff);
-    //text(title.getContent(), 976, 220, 288, 40);
     text(title.getContent(), 976, y, 288, 40);
 
     // draw description 
     textAlign(RIGHT, TOP);
     textFont(bodyFont, 14);
     fill(#ffffff);
-    //text(d.getContent(), 992, 260, 256, 50);
-    text(d.getContent(), 992, y+40, 256, 50);
+    text(d.getContent(), 992, y+45, 256, 50);
 
     // draw line
     stroke(#ffffff);
     strokeWeight(2);
-    //line(976, 315, 1248, 315);
-    line(976, y+95, 1248, y+95);
+    line(976, y+100, 1248, y+100);
   }
 }

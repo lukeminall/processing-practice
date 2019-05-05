@@ -17,14 +17,14 @@ class smallBlock {
     x = tempX;
     y = tempY;
     position = tempPosition;
-    
+
     // get data
     row = profiles.getRow(position);
     imgSrc = row.getString("photo");
     first = row.getString("first");
     last = row.getString("last");
     title = row.getString("title");
-    
+
     // load image
     img = loadImage(imgSrc);
   }
@@ -37,10 +37,12 @@ class smallBlock {
   }
 
   void populate() {
-    
+
     // generate image
     if (imgSrc.equals("null") == true) {
       String titleAndFirst = title + " " + first;
+      
+      textFont(headerFont, 24);
       fill(#ffffff);
       textSize(38);
       textAlign(CENTER, BOTTOM);
